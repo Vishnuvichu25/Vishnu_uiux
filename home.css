@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -10,11 +9,11 @@ html{
 }
 
 body{
-    background:#F5EFEB;
-    color:#2F4156;
+    background:#0F0F0F;
+    color:#F5EFEB;
     font-family:'Manrope',sans-serif;
     min-height:100vh;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
 /* NAVBAR */
@@ -25,88 +24,96 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:relative;
+    z-index:10;
 }
 
 .logo{
     text-decoration:none;
-    color:#2F4156;
+    color:#F5EFEB;
     font-size:1.2rem;
     font-weight:700;
 }
 
 .nav-links{
+    list-style:none;
     display:flex;
     gap:40px;
-    list-style:none;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#2F4156;
-    font-size:.95rem;
+    color:#F5EFEB;
     transition:.3s ease;
 }
 
 .nav-links a:hover{
-    color:#567C8D;
+    color:#D7C7B5;
 }
 
 /* HERO */
 
 .hero{
     position:relative;
+
     height:calc(100vh - 100px);
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
-    padding:0 8%;
+    overflow:hidden;
 }
 
 .hero-content{
-    max-width:750px;
+    position:relative;
+    z-index:5;
+
     text-align:center;
-    z-index:2;
+    max-width:850px;
 }
 
 .role{
-    letter-spacing:2px;
+    color:#D7C7B5;
     text-transform:uppercase;
-    color:#567C8D;
-    margin-bottom:20px;
+    letter-spacing:3px;
     font-size:.85rem;
+
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-family:'Cormorant Garamond', serif;
-    font-size:6rem;
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:7rem;
     line-height:1;
-    margin-bottom:24px;
+
+    margin-bottom:25px;
 }
 
 .description{
-    font-size:1.1rem;
-    line-height:1.8;
-    max-width:550px;
+    max-width:650px;
+
     margin:auto;
+
+    line-height:1.9;
+
+    color:#D8D2CD;
+
     margin-bottom:40px;
 }
 
-/* BUTTON */
-
 .cta-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
+    display:inline-block;
 
-    padding:16px 32px;
+    text-decoration:none;
 
     background:#2F4156;
     color:white;
 
-    border-radius:100px;
-    text-decoration:none;
+    padding:16px 34px;
+
+    border-radius:999px;
 
     transition:.3s ease;
 }
@@ -115,43 +122,129 @@ body{
     transform:translateY(-4px);
 }
 
-/* GLOW */
+/* FLOATING BLOBS */
 
-.hero-glow{
+.blob{
     position:absolute;
-
-    width:600px;
-    height:600px;
-
-    background:#C8D9E6;
 
     border-radius:50%;
 
-    filter:blur(120px);
+    filter:blur(140px);
+}
 
-    opacity:.45;
+/* Beige */
 
-    z-index:1;
+.blob-1{
+    width:700px;
+    height:700px;
+
+    background:#D9C7B5;
+
+    left:-200px;
+    top:-150px;
+
+    opacity:.22;
+
+    animation:floatLeft 28s ease-in-out infinite;
+}
+
+/* Grey */
+
+.blob-2{
+    width:600px;
+    height:600px;
+
+    background:#444444;
+
+    right:-150px;
+    bottom:-150px;
+
+    opacity:.35;
+
+    animation:floatRight 32s ease-in-out infinite;
+}
+
+/* Warm Dark */
+
+.blob-3{
+    width:450px;
+    height:450px;
+
+    background:#6B5E55;
+
+    top:50%;
+    left:50%;
+
+    opacity:.22;
+
+    animation:floatCenter 25s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes floatLeft{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    50%{
+        transform:translateX(250px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes floatRight{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    50%{
+        transform:translateX(-250px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes floatCenter{
+
+    0%{
+        transform:translate(-50%, -50%);
+    }
+
+    50%{
+        transform:translate(-30%, -60%);
+    }
+
+    100%{
+        transform:translate(-50%, -50%);
+    }
+
 }
 
 /* RESPONSIVE */
 
 @media(max-width:768px){
 
-    .navbar{
-        padding:24px 6%;
-    }
-
-    .nav-links{
-        gap:20px;
-    }
-
     .hero h1{
         font-size:4rem;
     }
 
     .description{
-        font-size:1rem;
+        font-size:.95rem;
+        padding:0 20px;
+    }
+
+    .nav-links{
+        gap:20px;
     }
 
 }
