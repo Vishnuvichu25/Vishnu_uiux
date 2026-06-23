@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <link rel="stylesheet" href="playground.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-strips">
+        <span class="strip s1"></span>
+        <span class="strip s2"></span>
+        <span class="strip s3"></span>
+        <span class="strip s4"></span>
+    </div>
+
+    <div class="rain">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            VN
+        </a>
+
+       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="playground.html" class="active-nav">Playground</a></li>
+  
+    </ul>
+
+    </nav>
+
+    <!-- PAGE -->
+
+    <main class="playground-page">
+
+        <!-- HEADER -->
+
+        <section class="playground-header reveal">
+
+            <span class="section-tag">
+                PLAYGROUND
+            </span>
+
+            <h1>
+                Intertion, Motion & Visual Experiments
+            </h1>
+
+            <p>
+                A collection of interface explorations,
+                interaction concepts, game UI experiments and visual design systems.
+            </p>
+
+        </section>
+
+        <!-- GRID -->
+
+        <section class="playground-grid">
+
+            <!-- AXIS -->
+
+          <article class="play-card reveal">
+
+    <div class="play-image">
+
+        <img
+            src="images_videos/ipad_mockup.png"
+            alt="Axis interaction concept">
+
+    </div>
+
+    <div class="play-content">
+
+        <span class="play-tag">
+            A Utility Dial
+        </span>
+
+        <h2>
+            Axis
+        </h2>
+
+        <p>
+            Recreated a Pinterest idea as a radial interaction system
+            exploring contextual tool access through interaction and animation.
+            Useful for creative software.
+        </p>
+
+        <div class="play-buttons">
+
+            <button
+                class="play-btn open-modal"
+                data-video="images_videos/Axis_dial.mp4">
+
+                Watch Demo
+
+            </button>
+
+        </div>
+
+    </div>
+
+</article>
+
+        </section>
+
+    </main>
+     <div class="video-modal" id="videoModal">
+
+        <div class="modal-content">
+
+            <span class="close-modal">&times;</span>
+
+            <video id="projectVideo" controls preload="metadata">
+            </video>
+
+        </div>
+    <script src="playground.js"></script>
+</body>
+
+</html>

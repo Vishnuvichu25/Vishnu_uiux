@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #F8F8F8;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(135deg,
+            #0A0A0A 0%,
+            #161616 25%,
+            #252525 50%,
+            #161616 75%,
+            #0A0A0A 100%);
+}
+
+/* =========================
+BACKGROUND STRIPS
+========================= */
+
+.bg-strips {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.strip {
+    position: absolute;
+    width: 120%;
+    height: 220px;
+
+    filter: blur(120px);
+
+    opacity: .04;
+}
+
+.s1 {
+    background: #D7C7B5;
+    top: 5%;
+    left: -20%;
+    animation: float1 18s ease-in-out infinite;
+}
+
+.s2 {
+    background: #242223;
+    top: 35%;
+    right: -20%;
+    animation: float2 20s ease-in-out infinite;
+}
+
+.s3 {
+    background: #111111;
+    bottom: 10%;
+    left: -15%;
+    animation: float3 22s ease-in-out infinite;
+}
+
+.s4 {
+    background: #B7A694;
+    bottom: -5%;
+    right: -20%;
+    animation: float4 25s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    50% {
+        transform: translateX(120px);
+    }
+}
+
+@keyframes float2 {
+    50% {
+        transform: translateX(-120px);
+    }
+}
+
+@keyframes float3 {
+    50% {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes float4 {
+    50% {
+        transform: translateX(-100px);
+    }
+}
+
+/* =========================
+RAIN
+========================= */
+
+.rain {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.rain span {
+    position: absolute;
+    width: 1px;
+    height: 140px;
+
+    background:
+        linear-gradient(transparent,
+            rgba(215, 199, 181, .12),
+            transparent);
+
+    animation: rainFall linear infinite;
+}
+
+.rain span:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.rain span:nth-child(2) {
+    left: 20%;
+    animation-duration: 10s;
+}
+
+.rain span:nth-child(3) {
+    left: 30%;
+    animation-duration: 7s;
+}
+
+.rain span:nth-child(4) {
+    left: 40%;
+    animation-duration: 11s;
+}
+
+.rain span:nth-child(5) {
+    left: 50%;
+    animation-duration: 8s;
+}
+
+.rain span:nth-child(6) {
+    left: 60%;
+    animation-duration: 9s;
+}
+
+.rain span:nth-child(7) {
+    left: 70%;
+    animation-duration: 7s;
+}
+
+.rain span:nth-child(8) {
+    left: 80%;
+    animation-duration: 12s;
+}
+
+.rain span:nth-child(9) {
+    left: 90%;
+    animation-duration: 9s;
+}
+
+.rain span:nth-child(10) {
+    left: 95%;
+    animation-duration: 8s;
+}
+
+@keyframes rainFall {
+    from {
+        transform: translateY(-200px);
+    }
+
+    to {
+        transform: translateY(120vh);
+    }
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 32px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #F4A340;
+}
+
+.nav-links a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #cfcfcf;
+
+    transition: .3s ease;
+}
+
+.nav-links a:hover {
+    color: #F4A340;
+}
+
+/* =========================
+PAGE
+========================= */
+
+.playground-page {
+    width: min(1200px, 90%);
+    margin: auto;
+    padding-bottom: 120px;
+}
+
+.playground-header {
+    text-align: center;
+    padding: 100px 0 80px;
+}
+
+.section-tag {
+    color: #F4A340;
+    letter-spacing: 3px;
+    font-size: .8rem;
+}
+
+.playground-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.playground-header p {
+    max-width: 700px;
+    margin: auto;
+    color: #CFCFCF;
+    line-height: 1.8;
+}
+
+/* =========================
+GRID
+========================= */
+
+.playground-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* =========================
+CARD
+========================= */
+.play-card {
+
+    display: grid;
+
+    grid-template-columns: 380px 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    padding: 40px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .03),
+            rgba(255, 255, 255, .01));
+
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.play-image {
+
+    width: 100%;
+}
+
+.play-image img {
+
+    width: 100%;
+
+    max-width: 380px;
+
+    display: block;
+
+    margin: auto;
+
+    object-fit: contain;
+}
+
+.play-content {
+
+    max-width: 650px;
+}
+
+.play-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+/* =========================
+CONTENT
+========================= */
+
+.play-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.play-tag {
+    color: #F4A340;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .75rem;
+}
+
+.play-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    margin: 10px 0 15px;
+}
+
+.play-content p {
+    color: #D5D5D5;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.play-buttons {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 16px;
+}
+
+.play-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#F4A340;
+
+    color:#111;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.play-btn:hover{
+
+    transform:translateY(-4px);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 999px;
+}
+
+.secondary-btn:hover {
+    border-color: #F4A340;
+}
+
+/* =========================
+REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.video-modal.active{
+    display:flex;
+}
+
+.modal-content{
+    position:relative;
+}
+
+#projectVideo{
+    max-width:90vw;
+    max-height:85vh;
+    border-radius:20px;
+}
+
+.close-modal{
+    position:absolute;
+    right:0;
+    top:-50px;
+    color:white;
+    font-size:2.5rem;
+    cursor:pointer;
+}
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px) {
+
+    .play-card {
+        grid-template-columns: 1fr;
+    }
+
+    .playground-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .play-buttons {
+        flex-direction: column;
+    }
+}
